@@ -1,0 +1,14 @@
+{ 
+"TestCase_01": [
+		{
+		       "AppURL":"https://www.cricbuzz.com",
+			"UserName": "vinay reddy manikhyala",
+			"Password": "welcome",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"ReportName": "UpgradeRunReport"
+			
+		}
+	]
+
+}

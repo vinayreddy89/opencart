@@ -3,6 +3,7 @@ package testCases;
 import static org.testng.Assert.assertEquals;
 
 import java.io.File;
+import java.util.Hashtable;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,14 +17,15 @@ public class TestLogin extends BaseTest {
 	// public WebDriver driver;
 
 	@Test(dataProvider = "getaccountdata")
-	public void login() throws InterruptedException {
+	public void login(Hashtable<String, String> data) throws InterruptedException {
 		logger.info("Starting TestLogin");
 		HomePage home = new HomePage(driver);
 		RegisterPage reg = new RegisterPage(driver);
 
 		home.clickAccountLink();
 		home.clickRegisterLink();
-		reg.enterFirstName(randomString());
+		reg.enterFirstName(data.get("UserName"));
+		Thread.sleep(3000);
 		reg.enterLastName(randomString());
 		reg.enterEmailName(randomString() + "@gmail.com");
 		reg.enterPhone(randomNumber());
@@ -42,7 +44,7 @@ public class TestLogin extends BaseTest {
 
 	@DataProvider
 	public Object[][] getaccountdata() {
-		return getTestData(new File("testcases.json"), "TestCase_010");
+		return getTestData(new File("testData/logindata.json"), "TestCase_01");
 	}
 
 }
