@@ -3,7 +3,7 @@ package testCases;
 import java.util.Arrays;
 
 public class Search {
-// testt
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int a[] = { 249, 10, 6, 8, 5, 3 };
